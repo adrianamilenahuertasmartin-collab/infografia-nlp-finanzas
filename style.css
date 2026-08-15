@@ -1,6 +1,0 @@
-// Ejemplo de interactividad: mostrar mensaje al hacer clic
-document.querySelectorAll('.card').forEach(card => {
-  card.addEventListener('click', () => {
-    alert("Más información próximamente...");
-  });
-});
