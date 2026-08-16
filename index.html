@@ -3,141 +3,152 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Infografía Interactiva: NLP en la Industria Financiera</title>
+  <title>Infografía Interactiva - NLP en Finanzas</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
 
-  <!-- ENCABEZADO PRINCIPAL -->
-  <header>
-    <div class="badge-tag">Universidad de La Salle | Maestría en IA</div>
-    <h1>Procesamiento del Lenguaje Natural (NLP)</h1>
-    <p class="subtitle">Conceptos Clave, Librerías Fundamentales y Aplicaciones Prácticas en el Sector Financiero</p>
+  <!-- PÓSTER DE INFOGRAFÍA TIPO CANVA -->
+  <div class="infografia-poster">
     
-    <div class="author-card">
-      <span><strong>Autora:</strong> Adriana Milena Huertas Martín</span>
-      <span>•</span>
-      <span><strong>Asignatura:</strong> Aplicaciones II</span>
-      <span>•</span>
-      <span>Unidad 1 - Actividad 1</span>
-    </div>
-  </header>
-
-  <main class="main-container">
-
-    <!-- SECCIÓN 1: CONCEPTOS BÁSICOS -->
-    <section class="module-section">
-      <div class="section-header">
-        <h2>1. Conceptos Fundamentales del NLP</h2>
-        <p>Haz clic en cada botón para explorar los conceptos esenciales explicados de forma clara y accesible.</p>
+    <!-- BANNER ENCABEZADO -->
+    <header class="poster-header">
+      <div class="tag-universidad">UNIVERSIDAD DE LA SALLE • MAESTRÍA EN IA</div>
+      <h1>INFOGRAFÍA INTERACTIVA: NLP EN FINANZAS</h1>
+      <p class="subtitle">Conceptos, Librerías y Aplicaciones Prácticas</p>
+      <div class="autor-box">
+        <strong>Autora:</strong> Adriana Milena Huertas Martín | <strong>Asignatura:</strong> Aplicaciones II
       </div>
+    </header>
 
-      <div class="tabs-grid">
-        <button class="tab-btn active" onclick="mostrarConcepto('tokenizacion', this)">🔤 Tokenización</button>
-        <button class="tab-btn" onclick="mostrarConcepto('normalizacion', this)">📚 Lematización y Stemming</button>
-        <button class="tab-btn" onclick="mostrarConcepto('embeddings', this)">🌐 Embeddings de Texto</button>
-        <button class="tab-btn" onclick="mostrarConcepto('modelos', this)">🧠 Modelos de Lenguaje</button>
+    <!-- BLOQUE 1: CONCEPTOS CLAVE -->
+    <section class="poster-block">
+      <div class="block-title">
+        <span class="step-num">1</span>
+        <h2>CONCEPTOS CLAVE DE NLP</h2>
       </div>
+      <p class="instruction">👇 Toca los botones para desplegar la información de cada concepto:</p>
+      
+      <div class="buttons-canvas-grid">
+        <button class="btn-canva purple" onclick="openModal('tokenizacion')">
+          <span class="btn-icon">🔤</span>
+          <span class="btn-text">TOKENIZACIÓN</span>
+          <span class="btn-sub">Ver detalle ➔</span>
+        </button>
 
-      <div id="display-conceptos" class="content-display">
-        <!-- Contenido dinámico con JS -->
+        <button class="btn-canva pink" onclick="openModal('normalizacion')">
+          <span class="btn-icon">📚</span>
+          <span class="btn-text">LEMATIZACIÓN & STEMMING</span>
+          <span class="btn-sub">Ver detalle ➔</span>
+        </button>
+
+        <button class="btn-canva blue" onclick="openModal('embeddings')">
+          <span class="btn-icon">🌐</span>
+          <span class="btn-text">EMBEDDINGS DE TEXTO</span>
+          <span class="btn-sub">Ver detalle ➔</span>
+        </button>
+
+        <button class="btn-canva teal" onclick="openModal('modelos')">
+          <span class="btn-icon">🧠</span>
+          <span class="btn-text">MODELOS DE LENGUAJE</span>
+          <span class="btn-sub">Ver detalle ➔</span>
+        </button>
       </div>
     </section>
 
-    <!-- SECCIÓN 2: LIBRERÍAS CLAVE (NLTK, SPACY, GENSIM) -->
-    <section class="module-section">
-      <div class="section-header">
-        <h2>2. Principales Librerías de NLP</h2>
-        <p>Herramientas estándar de la industria utilizadas para procesar texto no estructurado.</p>
+    <!-- BLOQUE 2: LIBRERÍAS CLAVE -->
+    <section class="poster-block Highlight">
+      <div class="block-title">
+        <span class="step-num">2</span>
+        <h2>LIBRERÍAS DE PYTHON</h2>
       </div>
-
-      <div class="tools-grid">
-        <div class="tool-card">
-          <div class="tool-badge nltk">NLTK</div>
+      
+      <div class="librerias-canvas-grid">
+        <div class="lib-card" onclick="openModal('nltk')">
+          <div class="lib-badge nltk-b">NLTK</div>
           <h3>Natural Language Toolkit</h3>
-          <p>Librería fundamental en Python para educación e investigación. Excelente para aprendizaje de conceptos iniciales y prototipado rápido.</p>
-          <ul>
-            <li><strong>Capacidades:</strong> Tokenización, stemming, análisis sintáctico y etiquetado gramatical (POS).</li>
-            <li><strong>Limitaciones:</strong> Velocidad de procesamiento lenta para aplicaciones bancarias en tiempo real.</li>
-          </ul>
+          <p>Uso académico, preprocesamiento básico y tokenización de texto.</p>
+          <button class="btn-read">Ver capacidades y límites ➔</button>
         </div>
 
-        <div class="tool-card">
-          <div class="tool-badge spacy">spaCy</div>
+        <div class="lib-card" onclick="openModal('spacy')">
+          <div class="lib-badge spacy-b">spaCy</div>
           <h3>Industrial-Strength NLP</h3>
-          <p>Diseñada específicamente para entornos de producción de alta velocidad. Destaca en Reconocimiento de Entidades Nombradas (NER).</p>
-          <ul>
-            <li><strong>Capacidades:</strong> Extracción de nombres, fechas, montos e instituciones en contratos crediticios.</li>
-            <li><strong>Limitaciones:</strong> Menos flexible para la investigación de algoritmos personalizados.</li>
-          </ul>
+          <p>Procesamiento de alta velocidad para extracción de entidades (NER).</p>
+          <button class="btn-read">Ver capacidades y límites ➔</button>
         </div>
 
-        <div class="tool-card">
-          <div class="tool-badge gensim">Gensim</div>
-          <h3>Topic Modeling & Embeddings</h3>
-          <p>Especializada en modelado de temas (Topic Modeling) y manejo eficiente de grandes corpus de texto mediante memoria mapeada.</p>
-          <ul>
-            <li><strong>Capacidades:</strong> Algoritmos Word2Vec, FastText y Latent Dirichlet Allocation (LDA) para agrupamiento.</li>
-            <li><strong>Limitaciones:</strong> No ofrece funcionalidades de análisis sintáctico básico o etiquetado de texto.</li>
-          </ul>
+        <div class="lib-card" onclick="openModal('gensim')">
+          <div class="lib-badge gensim-b">Gensim</div>
+          <h3>Topic Modeling & Vector Space</h3>
+          <p>Modelado de temas, algoritmos Word2Vec y agrupamiento de corpus.</p>
+          <button class="btn-read">Ver capacidades y límites ➔</button>
         </div>
       </div>
     </section>
 
-    <!-- SECCIÓN 3: APLICACIONES EN LA INDUSTRIA FINANCIERA -->
-    <section class="module-section">
-      <div class="section-header">
-        <h2>3. Aplicaciones Prácticas en el Sector Financiero</h2>
-        <p>Descubre cómo el NLP optimiza procesos, mejora la experiencia del usuario y reduce riesgos en la banca.</p>
+    <!-- BLOQUE 3: APLICACIONES EN LA INDUSTRIA FINANCIERA -->
+    <section class="poster-block">
+      <div class="block-title">
+        <span class="step-num">3</span>
+        <h2>APLICACIONES EN BANCA Y FINANZAS</h2>
       </div>
+      <p class="instruction">👇 Toca las tarjetas para ver cómo aportan valor en la industria:</p>
 
-      <div class="tabs-grid">
-        <button class="tab-btn-app active" onclick="mostrarApp('pqrs', this)">📊 Análisis de PQRS</button>
-        <button class="tab-btn-app" onclick="mostrarApp('chatbots', this)">🤖 Chatbots Financieros</button>
-        <button class="tab-btn-app" onclick="mostrarApp('fraude', this)">🛡️ Detección de Fraude</button>
-        <button class="tab-btn-app" onclick="mostrarApp('scoring', this)">📄 Scoring Documental</button>
-        <button class="tab-btn-app" onclick="mostrarApp('sentimiento', this)">📈 Sentimiento de Mercado</button>
-      </div>
+      <div class="buttons-canvas-grid">
+        <button class="btn-canva orange" onclick="openModal('pqrs')">
+          <span class="btn-icon">📊</span>
+          <span class="btn-text">ANÁLISIS DE PQRS</span>
+          <span class="btn-sub">Ver caso práctico ➔</span>
+        </button>
 
-      <div id="display-aplicaciones" class="content-display">
-        <!-- Contenido dinámico con JS -->
-      </div>
-    </section>
+        <button class="btn-canva green" onclick="openModal('chatbots')">
+          <span class="btn-icon">🤖</span>
+          <span class="btn-text">CHATBOTS BANCARIOS</span>
+          <span class="btn-sub">Ver caso práctico ➔</span>
+        </button>
 
-    <!-- SECCIÓN 4: RECURSOS ADICIONALES (CUMPLE CRITERIO DE INTERACTIVIDAD / ENLACES) -->
-    <section class="module-section">
-      <div class="section-header">
-        <h2>4. Recursos y Bibliografía Adicional</h2>
-        <p>Explora la documentación oficial y lecturas complementarias para profundizar en el tema.</p>
-      </div>
+        <button class="btn-canva red" onclick="openModal('fraude')">
+          <span class="btn-icon">🛡️</span>
+          <span class="btn-text">DETECCIÓN DE FRAUDE</span>
+          <span class="btn-sub">Ver caso práctico ➔</span>
+        </button>
 
-      <div class="links-grid">
-        <a href="https://www.nltk.org/" target="_blank" class="link-card">
-          <span>📚 Documentación Oficial de NLTK</span>
-          <small>Guías, tutoriales y API para Python.</small>
-        </a>
-        <a href="https://spacy.io/" target="_blank" class="link-card">
-          <span>⚡ Documentación Oficial de spaCy</span>
-          <small>Modelos multilingües y pipelines de producción.</small>
-        </a>
-        <a href="https://radimrehurek.com/gensim/" target="_blank" class="link-card">
-          <span>🌐 Documentación Oficial de Gensim</span>
-          <small>Tutoriales sobre Word2Vec y modelado de temas.</small>
-        </a>
-        <a href="https://link.springer.com/book/10.1007/978-3-030-22802-6" target="_blank" class="link-card">
-          <span>📖 Lectura: NLP & Information Systems (NLDB)</span>
-          <small>Referencia académica Springer (Métais et al., 2019).</small>
-        </a>
+        <button class="btn-canva darkblue" onclick="openModal('scoring')">
+          <span class="btn-icon">📄</span>
+          <span class="btn-text">SCORING DOCUMENTAL</span>
+          <span class="btn-sub">Ver caso práctico ➔</span>
+        </button>
       </div>
     </section>
 
-  </main>
+    <!-- BLOQUE 4: RECURSOS INTERACTIVOS -->
+    <section class="poster-block links-block">
+      <h2>🔗 RECURSOS Y DOCUMENTACIÓN COMPLEMENTARIA</h2>
+      <div class="links-grid-canva">
+        <a href="https://www.nltk.org/" target="_blank" class="link-btn">📚 NLTK Docs</a>
+        <a href="https://spacy.io/" target="_blank" class="link-btn">⚡ spaCy Docs</a>
+        <a href="https://radimrehurek.com/gensim/" target="_blank" class="link-btn">🌐 Gensim Docs</a>
+        <a href="https://link.springer.com/book/10.1007/978-3-030-22802-6" target="_blank" class="link-btn">📖 Lectura NLDB Springer</a>
+      </div>
+    </section>
 
-  <footer>
-    <p><strong>Infografía Interactiva de Procesamiento del Lenguaje Natural</strong></p>
-    <p>Diseñada por Adriana Milena Huertas Martín | Maestría en IA – Universidad de La Salle © 2026</p>
-  </footer>
+    <footer>
+      Infografía creada por Adriana Milena Huertas Martín | Maestría en IA – Universidad de La Salle © 2026
+    </footer>
+
+  </div>
+
+  <!-- VENTANA MODAL EMERGENTE -->
+  <div id="modal-container" class="modal-overlay" onclick="closeModal(event)">
+    <div class="modal-card">
+      <button class="close-btn" onclick="closeModalDirect()">✖</button>
+      <div id="modal-content">
+        <!-- Contenido dinámico -->
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
