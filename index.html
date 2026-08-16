@@ -3,118 +3,132 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Infografía NLP en Finanzas - Maestría en IA</title>
+  <title>Infografía Interactiva: NLP en la Industria Financiera</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
+
+  <!-- ENCABEZADO PRINCIPAL -->
   <header>
-    <div class="badge-tag">Universidad de La Salle | Maestría en Inteligencia Artificial</div>
-    <h1>Procesamiento del Lenguaje Natural (NLP) en el Sector Financiero</h1>
-    <p class="subtitle">Unidad 1: Fundamentos y Aplicaciones del NLP en Servicios Financieros</p>
+    <div class="badge-tag">Universidad de La Salle | Maestría en IA</div>
+    <h1>Procesamiento del Lenguaje Natural (NLP)</h1>
+    <p class="subtitle">Conceptos Clave, Librerías Fundamentales y Aplicaciones Prácticas en el Sector Financiero</p>
+    
     <div class="author-card">
       <span><strong>Autora:</strong> Adriana Milena Huertas Martín</span>
-      <span>|</span>
-      <span><strong>Asignatura:</strong> Aplicaciones II (2026-2)</span>
+      <span>•</span>
+      <span><strong>Asignatura:</strong> Aplicaciones II</span>
+      <span>•</span>
+      <span>Unidad 1 - Actividad 1</span>
     </div>
   </header>
 
   <main class="main-container">
-    
-    <!-- SECCIÓN 1: CONCEPTOS FUNDAMENTALES -->
+
+    <!-- SECCIÓN 1: CONCEPTOS BÁSICOS -->
     <section class="module-section">
       <div class="section-header">
-        <h2>1. Conceptos Fundamentales de NLP</h2>
-        <p>Selecciona un pilar técnico para explorar su arquitectura, funcionamiento técnico y caso de uso financiero.</p>
+        <h2>1. Conceptos Fundamentales del NLP</h2>
+        <p>Haz clic en cada botón para explorar los conceptos esenciales explicados de forma clara y accesible.</p>
       </div>
 
       <div class="tabs-grid">
-        <button class="tab-btn active" onclick="mostrarDetalle('tokenizacion', this)">
-          <span class="icon">🔤</span> Tokenización
-        </button>
-        <button class="tab-btn" onclick="mostrarDetalle('lematizacion', this)">
-          <span class="icon">📚</span> Lematización vs Lematización
-        </button>
-        <button class="tab-btn" onclick="mostrarDetalle('embeddings', this)">
-          <span class="icon">🌐</span> Embeddings Vectoriales
-        </button>
-        <button class="tab-btn" onclick="mostrarDetalle('transformers', this)">
-          <span class="icon">⚙️</span> Arquitectura Transformers
-        </button>
-        <button class="tab-btn" onclick="mostrarDetalle('llms', this)">
-          <span class="icon">🧠</span> Modelos Fin-LLM
-        </button>
+        <button class="tab-btn active" onclick="mostrarConcepto('tokenizacion', this)">🔤 Tokenización</button>
+        <button class="tab-btn" onclick="mostrarConcepto('normalizacion', this)">📚 Lematización y Stemming</button>
+        <button class="tab-btn" onclick="mostrarConcepto('embeddings', this)">🌐 Embeddings de Texto</button>
+        <button class="tab-btn" onclick="mostrarConcepto('modelos', this)">🧠 Modelos de Lenguaje</button>
       </div>
 
-      <div id="content-display-1" class="content-display">
-        <!-- El contenido detallado se inyecta dinámicamente con JS -->
+      <div id="display-conceptos" class="content-display">
+        <!-- Contenido dinámico con JS -->
       </div>
     </section>
 
-    <!-- SECCIÓN 2: LIBRERÍAS Y HERRAMIENTAS -->
+    <!-- SECCIÓN 2: LIBRERÍAS CLAVE (NLTK, SPACY, GENSIM) -->
     <section class="module-section">
       <div class="section-header">
-        <h2>2. Ecosistema de Librerías y Frameworks</h2>
-        <p>Herramientas clave utilizadas en producción y la industria fintech para el desarrollo de soluciones NLP.</p>
+        <h2>2. Principales Librerías de NLP</h2>
+        <p>Herramientas estándar de la industria utilizadas para procesar texto no estructurado.</p>
       </div>
 
       <div class="tools-grid">
         <div class="tool-card">
-          <div class="tool-badge">NLTK</div>
+          <div class="tool-badge nltk">NLTK</div>
           <h3>Natural Language Toolkit</h3>
-          <p>Librería clásica fundamental en entornos académicos para prototipado rápido, tokenización y análisis gramatical.</p>
+          <p>Librería fundamental en Python para educación e investigación. Excelente para aprendizaje de conceptos iniciales y prototipado rápido.</p>
           <ul>
-            <li><strong>Uso:</strong> Limpieza de texto y preprocesamiento de corpus bancarios.</li>
-            <li><strong>Fortaleza:</strong> Gran diversidad de algoritmos tokenizadores y corpus educativos.</li>
+            <li><strong>Capacidades:</strong> Tokenización, stemming, análisis sintáctico y etiquetado gramatical (POS).</li>
+            <li><strong>Limitaciones:</strong> Velocidad de procesamiento lenta para aplicaciones bancarias en tiempo real.</li>
           </ul>
         </div>
 
         <div class="tool-card">
           <div class="tool-badge spacy">spaCy</div>
           <h3>Industrial-Strength NLP</h3>
-          <p>Framework diseñado para producción de alta velocidad. Excelente precisión en Reconocimiento de Entidades Nombradas (NER).</p>
+          <p>Diseñada específicamente para entornos de producción de alta velocidad. Destaca en Reconocimiento de Entidades Nombradas (NER).</p>
           <ul>
-            <li><strong>Uso:</strong> Extracción de nombres, fechas y montos en contratos de crédito.</li>
-            <li><strong>Fortaleza:</strong> Pipelines optimizados en C++ y modelos multilingües avanzados.</li>
+            <li><strong>Capacidades:</strong> Extracción de nombres, fechas, montos e instituciones en contratos crediticios.</li>
+            <li><strong>Limitaciones:</strong> Menos flexible para la investigación de algoritmos personalizados.</li>
           </ul>
         </div>
 
         <div class="tool-card">
-          <div class="tool-badge hf">Hugging Face</div>
-          <h3>Transformers & Datasets</h3>
-          <p>Ecosistema estándar de la industria para despliegue de modelos pré-entrenados como BERT, RoBERTa y Llama.</p>
+          <div class="tool-badge gensim">Gensim</div>
+          <h3>Topic Modeling & Embeddings</h3>
+          <p>Especializada en modelado de temas (Topic Modeling) y manejo eficiente de grandes corpus de texto mediante memoria mapeada.</p>
           <ul>
-            <li><strong>Uso:</strong> Fine-tuning de FinBERT para análisis de sentimiento en reportes bursátiles.</li>
-            <li><strong>Fortaleza:</strong> Hub de modelos colaborativo y librerías de inferencia acelerada.</li>
+            <li><strong>Capacidades:</strong> Algoritmos Word2Vec, FastText y Latent Dirichlet Allocation (LDA) para agrupamiento.</li>
+            <li><strong>Limitaciones:</strong> No ofrece funcionalidades de análisis sintáctico básico o etiquetado de texto.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- SECCIÓN 3: APLICACIONES EN BANCA Y FINANZAS -->
+    <!-- SECCIÓN 3: APLICACIONES EN LA INDUSTRIA FINANCIERA -->
     <section class="module-section">
       <div class="section-header">
-        <h2>3. Aplicaciones de Alto Impacto en Banca y Finanzas</h2>
-        <p>Explora cómo el NLP transforma la operación diaria, mitiga riesgos y optimiza la atención al cliente.</p>
+        <h2>3. Aplicaciones Prácticas en el Sector Financiero</h2>
+        <p>Descubre cómo el NLP optimiza procesos, mejora la experiencia del usuario y reduce riesgos en la banca.</p>
       </div>
 
       <div class="tabs-grid">
-        <button class="tab-btn-app active" onclick="mostrarApp('pqrs', this)">
-          <span class="icon">📊</span> Análisis de PQRS
-        </button>
-        <button class="tab-btn-app" onclick="mostrarApp('chatbots', this)">
-          <span class="icon">🤖</span> Chatbots Conversacionales
-        </button>
-        <button class="tab-btn-app" onclick="mostrarApp('fraude', this)">
-          <span class="icon">🛡️</span> Detección de Fraude
-        </button>
-        <button class="tab-btn-app" onclick="mostrarApp('riesgo', this)">
-          <span class="icon">📈</span> Evaluación de Riesgo
-        </button>
+        <button class="tab-btn-app active" onclick="mostrarApp('pqrs', this)">📊 Análisis de PQRS</button>
+        <button class="tab-btn-app" onclick="mostrarApp('chatbots', this)">🤖 Chatbots Financieros</button>
+        <button class="tab-btn-app" onclick="mostrarApp('fraude', this)">🛡️ Detección de Fraude</button>
+        <button class="tab-btn-app" onclick="mostrarApp('scoring', this)">📄 Scoring Documental</button>
+        <button class="tab-btn-app" onclick="mostrarApp('sentimiento', this)">📈 Sentimiento de Mercado</button>
       </div>
 
-      <div id="content-display-2" class="content-display">
-        <!-- El contenido detallado se inyecta dinámicamente con JS -->
+      <div id="display-aplicaciones" class="content-display">
+        <!-- Contenido dinámico con JS -->
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: RECURSOS ADICIONALES (CUMPLE CRITERIO DE INTERACTIVIDAD / ENLACES) -->
+    <section class="module-section">
+      <div class="section-header">
+        <h2>4. Recursos y Bibliografía Adicional</h2>
+        <p>Explora la documentación oficial y lecturas complementarias para profundizar en el tema.</p>
+      </div>
+
+      <div class="links-grid">
+        <a href="https://www.nltk.org/" target="_blank" class="link-card">
+          <span>📚 Documentación Oficial de NLTK</span>
+          <small>Guías, tutoriales y API para Python.</small>
+        </a>
+        <a href="https://spacy.io/" target="_blank" class="link-card">
+          <span>⚡ Documentación Oficial de spaCy</span>
+          <small>Modelos multilingües y pipelines de producción.</small>
+        </a>
+        <a href="https://radimrehurek.com/gensim/" target="_blank" class="link-card">
+          <span>🌐 Documentación Oficial de Gensim</span>
+          <small>Tutoriales sobre Word2Vec y modelado de temas.</small>
+        </a>
+        <a href="https://link.springer.com/book/10.1007/978-3-030-22802-6" target="_blank" class="link-card">
+          <span>📖 Lectura: NLP & Information Systems (NLDB)</span>
+          <small>Referencia académica Springer (Métais et al., 2019).</small>
+        </a>
       </div>
     </section>
 
@@ -122,7 +136,8 @@
 
   <footer>
     <p><strong>Infografía Interactiva de Procesamiento del Lenguaje Natural</strong></p>
-    <p>Diseñada por Adriana Milena Huertas Martín | Maestría en Inteligencia Artificial © 2026</p>
+    <p>Diseñada por Adriana Milena Huertas Martín | Maestría en IA – Universidad de La Salle © 2026</p>
   </footer>
+
 </body>
 </html>
