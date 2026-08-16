@@ -3,151 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Infografía Interactiva - NLP en Finanzas</title>
+  <title>Infografía Circular Interactiva - NLP en Finanzas</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
 
-  <!-- PÓSTER DE INFOGRAFÍA TIPO CANVA -->
-  <div class="infografia-poster">
+  <div class="infographic-container">
     
-    <!-- BANNER ENCABEZADO -->
-    <header class="poster-header">
-      <div class="tag-universidad">UNIVERSIDAD DE LA SALLE • MAESTRÍA EN IA</div>
-      <h1>INFOGRAFÍA INTERACTIVA: NLP EN FINANZAS</h1>
-      <p class="subtitle">Conceptos, Librerías y Aplicaciones Prácticas</p>
-      <div class="autor-box">
-        <strong>Autora:</strong> Adriana Milena Huertas Martín | <strong>Asignatura:</strong> Aplicaciones II
-      </div>
+    <!-- ENCABEZADO -->
+    <header class="main-header">
+      <span class="badge">UNIVERSIDAD DE LA SALLE • MAESTRÍA EN IA</span>
+      <h1>PROCESAMIENTO DEL LENGUAJE NATURAL (NLP)</h1>
+      <p>Conceptos Clave, Librerías y Aplicaciones en el Sector Financiero</p>
+      <div class="author-tag">Autora: Adriana Milena Huertas Martín | Asignatura: Aplicaciones II</div>
     </header>
 
-    <!-- BLOQUE 1: CONCEPTOS CLAVE -->
-    <section class="poster-block">
-      <div class="block-title">
-        <span class="step-num">1</span>
-        <h2>CONCEPTOS CLAVE DE NLP</h2>
-      </div>
-      <p class="instruction">👇 Toca los botones para desplegar la información de cada concepto:</p>
-      
-      <div class="buttons-canvas-grid">
-        <button class="btn-canva purple" onclick="openModal('tokenizacion')">
-          <span class="btn-icon">🔤</span>
-          <span class="btn-text">TOKENIZACIÓN</span>
-          <span class="btn-sub">Ver detalle ➔</span>
-        </button>
+    <!-- NAVEGACIÓN DE SECCIONES -->
+    <nav class="category-nav">
+      <button class="nav-btn active" onclick="switchCategory('conceptos', this)">💡 1. Conceptos Clave</button>
+      <button class="nav-btn" onclick="switchCategory('librerias', this)">⚙️ 2. Librerías Python</button>
+      <button class="nav-btn" onclick="switchCategory('aplicaciones', this)">🏦 3. Casos Financieros</button>
+    </nav>
 
-        <button class="btn-canva pink" onclick="openModal('normalizacion')">
-          <span class="btn-icon">📚</span>
-          <span class="btn-text">LEMATIZACIÓN & STEMMING</span>
-          <span class="btn-sub">Ver detalle ➔</span>
-        </button>
+    <!-- RUEDA INTERACTIVA ESTILO CANVA (DIAGRAMA CIRCULAR) -->
+    <div class="wheel-section">
+      <p class="instruction-text">👇 Haz clic en cualquiera de los nodos circulares para explorar la información:</p>
 
-        <button class="btn-canva blue" onclick="openModal('embeddings')">
-          <span class="btn-icon">🌐</span>
-          <span class="btn-text">EMBEDDINGS DE TEXTO</span>
-          <span class="btn-sub">Ver detalle ➔</span>
-        </button>
-
-        <button class="btn-canva teal" onclick="openModal('modelos')">
-          <span class="btn-icon">🧠</span>
-          <span class="btn-text">MODELOS DE LENGUAJE</span>
-          <span class="btn-sub">Ver detalle ➔</span>
-        </button>
-      </div>
-    </section>
-
-    <!-- BLOQUE 2: LIBRERÍAS CLAVE -->
-    <section class="poster-block Highlight">
-      <div class="block-title">
-        <span class="step-num">2</span>
-        <h2>LIBRERÍAS DE PYTHON</h2>
-      </div>
-      
-      <div class="librerias-canvas-grid">
-        <div class="lib-card" onclick="openModal('nltk')">
-          <div class="lib-badge nltk-b">NLTK</div>
-          <h3>Natural Language Toolkit</h3>
-          <p>Uso académico, preprocesamiento básico y tokenización de texto.</p>
-          <button class="btn-read">Ver capacidades y límites ➔</button>
+      <div class="circle-diagram">
+        <!-- NÚCLEO CENTRAL (MUESTRA LA INFORMACIÓN AL OPRIMIR UN NODO) -->
+        <div class="center-core" id="core-display">
+          <div class="core-placeholder">
+            <span class="core-icon">🔮</span>
+            <h3>Explora el Diagrama</h3>
+            <p>Selecciona un elemento circular del anillo para desplegar los detalles aquí.</p>
+          </div>
         </div>
 
-        <div class="lib-card" onclick="openModal('spacy')">
-          <div class="lib-badge spacy-b">spaCy</div>
-          <h3>Industrial-Strength NLP</h3>
-          <p>Procesamiento de alta velocidad para extracción de entidades (NER).</p>
-          <button class="btn-read">Ver capacidades y límites ➔</button>
-        </div>
-
-        <div class="lib-card" onclick="openModal('gensim')">
-          <div class="lib-badge gensim-b">Gensim</div>
-          <h3>Topic Modeling & Vector Space</h3>
-          <p>Modelado de temas, algoritmos Word2Vec y agrupamiento de corpus.</p>
-          <button class="btn-read">Ver capacidades y límites ➔</button>
+        <!-- NODOS CIRCULARES ALREDEDOR (POSICIONADOS EN CÍRCULO) -->
+        <div class="nodes-container" id="nodes-wrapper">
+          <!-- Generado dinámicamente desde JS -->
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- BLOQUE 3: APLICACIONES EN LA INDUSTRIA FINANCIERA -->
-    <section class="poster-block">
-      <div class="block-title">
-        <span class="step-num">3</span>
-        <h2>APLICACIONES EN BANCA Y FINANZAS</h2>
-      </div>
-      <p class="instruction">👇 Toca las tarjetas para ver cómo aportan valor en la industria:</p>
-
-      <div class="buttons-canvas-grid">
-        <button class="btn-canva orange" onclick="openModal('pqrs')">
-          <span class="btn-icon">📊</span>
-          <span class="btn-text">ANÁLISIS DE PQRS</span>
-          <span class="btn-sub">Ver caso práctico ➔</span>
-        </button>
-
-        <button class="btn-canva green" onclick="openModal('chatbots')">
-          <span class="btn-icon">🤖</span>
-          <span class="btn-text">CHATBOTS BANCARIOS</span>
-          <span class="btn-sub">Ver caso práctico ➔</span>
-        </button>
-
-        <button class="btn-canva red" onclick="openModal('fraude')">
-          <span class="btn-icon">🛡️</span>
-          <span class="btn-text">DETECCIÓN DE FRAUDE</span>
-          <span class="btn-sub">Ver caso práctico ➔</span>
-        </button>
-
-        <button class="btn-canva darkblue" onclick="openModal('scoring')">
-          <span class="btn-icon">📄</span>
-          <span class="btn-text">SCORING DOCUMENTAL</span>
-          <span class="btn-sub">Ver caso práctico ➔</span>
-        </button>
-      </div>
-    </section>
-
-    <!-- BLOQUE 4: RECURSOS INTERACTIVOS -->
-    <section class="poster-block links-block">
-      <h2>🔗 RECURSOS Y DOCUMENTACIÓN COMPLEMENTARIA</h2>
-      <div class="links-grid-canva">
-        <a href="https://www.nltk.org/" target="_blank" class="link-btn">📚 NLTK Docs</a>
-        <a href="https://spacy.io/" target="_blank" class="link-btn">⚡ spaCy Docs</a>
-        <a href="https://radimrehurek.com/gensim/" target="_blank" class="link-btn">🌐 Gensim Docs</a>
-        <a href="https://link.springer.com/book/10.1007/978-3-030-22802-6" target="_blank" class="link-btn">📖 Lectura NLDB Springer</a>
+    <!-- BLOQUE DE RECURSOS Y DOCUMENTACIÓN (REQUISITO RÚBRICA) -->
+    <section class="resources-section">
+      <h3>🔗 Documentación Oficial y Bibliografía</h3>
+      <div class="resources-grid">
+        <a href="https://www.nltk.org/" target="_blank" class="res-card">
+          <strong>NLTK Official Docs</strong>
+          <small>Herramienta estándar de tokenización en Python</small>
+        </a>
+        <a href="https://spacy.io/" target="_blank" class="res-card">
+          <strong>spaCy Industrial NLP</strong>
+          <small>Pipelines de alta velocidad para NER</small>
+        </a>
+        <a href="https://radimrehurek.com/gensim/" target="_blank" class="res-card">
+          <strong>Gensim Topic Modeling</strong>
+          <small>Vectores de espacio semántico y Word2Vec</small>
+        </a>
+        <a href="https://link.springer.com/book/10.1007/978-3-030-22802-6" target="_blank" class="res-card">
+          <strong>NLDB Springer (Métais et al., 2019)</strong>
+          <small>Lectura complementaria de la Unidad 1</small>
+        </a>
       </div>
     </section>
 
     <footer>
-      Infografía creada por Adriana Milena Huertas Martín | Maestría en IA – Universidad de La Salle © 2026
+      Infografía Interactiva de Procesamiento del Lenguaje Natural • Unidad 1 © 2026
     </footer>
 
-  </div>
-
-  <!-- VENTANA MODAL EMERGENTE -->
-  <div id="modal-container" class="modal-overlay" onclick="closeModal(event)">
-    <div class="modal-card">
-      <button class="close-btn" onclick="closeModalDirect()">✖</button>
-      <div id="modal-content">
-        <!-- Contenido dinámico -->
-      </div>
-    </div>
   </div>
 
 </body>
