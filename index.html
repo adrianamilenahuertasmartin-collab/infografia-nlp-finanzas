@@ -3,55 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Infografía NLP en Finanzas - Adriana Huertas</title>
+  <title>Infografía NLP en Finanzas - Maestría en IA</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
   <header>
-    <h1>Procesamiento de Lenguaje Natural (NLP)</h1>
-    <p><strong>Aplicaciones en el sector financiero</strong></p>
-    <p class="subtext">Adriana Milena Huertas Martín | Maestría en IA – Universidad de La Salle (2026)</p>
+    <div class="badge-tag">Universidad de La Salle | Maestría en Inteligencia Artificial</div>
+    <h1>Procesamiento del Lenguaje Natural (NLP) en el Sector Financiero</h1>
+    <p class="subtitle">Unidad 1: Fundamentos y Aplicaciones del NLP en Servicios Financieros</p>
+    <div class="author-card">
+      <span><strong>Autora:</strong> Adriana Milena Huertas Martín</span>
+      <span>|</span>
+      <span><strong>Asignatura:</strong> Aplicaciones II (2026-2)</span>
+    </div>
   </header>
 
-  <main class="container">
-    <section>
-      <h2>Conceptos Básicos</h2>
-      <div class="grid-buttons">
-        <button class="card-btn" onclick="toggleConcepto('concepto1', this)">🔤 Tokenización</button>
-        <button class="card-btn" onclick="toggleConcepto('concepto2', this)">📚 Lematización</button>
-        <button class="card-btn" onclick="toggleConcepto('concepto3', this)">🧠 Modelos de Lenguaje</button>
-        <button class="card-btn" onclick="toggleConcepto('concepto4', this)">🌐 Embeddings</button>
-        <button class="card-btn" onclick="toggleConcepto('concepto5', this)">⚙️ Transformers</button>
+  <main class="main-container">
+    
+    <!-- SECCIÓN 1: CONCEPTOS FUNDAMENTALES -->
+    <section class="module-section">
+      <div class="section-header">
+        <h2>1. Conceptos Fundamentales de NLP</h2>
+        <p>Selecciona un pilar técnico para explorar su arquitectura, funcionamiento técnico y caso de uso financiero.</p>
       </div>
 
-      <div id="concepto1" class="concepto-box"></div>
-      <div id="concepto2" class="concepto-box"></div>
-      <div id="concepto3" class="concepto-box"></div>
-      <div id="concepto4" class="concepto-box"></div>
-      <div id="concepto5" class="concepto-box"></div>
-    </section>
-
-    <section>
-      <h2>Aplicaciones en Banca</h2>
-      <div class="grid-buttons">
-        <button class="card-btn" onclick="toggleConcepto('aplicacion1', this)">📊 Análisis de PQRS</button>
-        <button class="card-btn" onclick="toggleConcepto('aplicacion2', this)">🤖 Chatbots Financieros</button>
-        <button class="card-btn" onclick="toggleConcepto('aplicacion3', this)">🛡️ Prevención de Fraude</button>
-        <button class="card-btn" onclick="toggleConcepto('aplicacion4', this)">📈 Predicción de Riesgos</button>
-        <button class="card-btn" onclick="toggleConcepto('aplicacion5', this)">🎓 Educación Financiera</button>
+      <div class="tabs-grid">
+        <button class="tab-btn active" onclick="mostrarDetalle('tokenizacion', this)">
+          <span class="icon">🔤</span> Tokenización
+        </button>
+        <button class="tab-btn" onclick="mostrarDetalle('lematizacion', this)">
+          <span class="icon">📚</span> Lematización vs Lematización
+        </button>
+        <button class="tab-btn" onclick="mostrarDetalle('embeddings', this)">
+          <span class="icon">🌐</span> Embeddings Vectoriales
+        </button>
+        <button class="tab-btn" onclick="mostrarDetalle('transformers', this)">
+          <span class="icon">⚙️</span> Arquitectura Transformers
+        </button>
+        <button class="tab-btn" onclick="mostrarDetalle('llms', this)">
+          <span class="icon">🧠</span> Modelos Fin-LLM
+        </button>
       </div>
 
-      <div id="aplicacion1" class="concepto-box"></div>
-      <div id="aplicacion2" class="concepto-box"></div>
-      <div id="aplicacion3" class="concepto-box"></div>
-      <div id="aplicacion4" class="concepto-box"></div>
-      <div id="aplicacion5" class="concepto-box"></div>
+      <div id="content-display-1" class="content-display">
+        <!-- El contenido detallado se inyecta dinámicamente con JS -->
+      </div>
     </section>
+
+    <!-- SECCIÓN 2: LIBRERÍAS Y HERRAMIENTAS -->
+    <section class="module-section">
+      <div class="section-header">
+        <h2>2. Ecosistema de Librerías y Frameworks</h2>
+        <p>Herramientas clave utilizadas en producción y la industria fintech para el desarrollo de soluciones NLP.</p>
+      </div>
+
+      <div class="tools-grid">
+        <div class="tool-card">
+          <div class="tool-badge">NLTK</div>
+          <h3>Natural Language Toolkit</h3>
+          <p>Librería clásica fundamental en entornos académicos para prototipado rápido, tokenización y análisis gramatical.</p>
+          <ul>
+            <li><strong>Uso:</strong> Limpieza de texto y preprocesamiento de corpus bancarios.</li>
+            <li><strong>Fortaleza:</strong> Gran diversidad de algoritmos tokenizadores y corpus educativos.</li>
+          </ul>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-badge spacy">spaCy</div>
+          <h3>Industrial-Strength NLP</h3>
+          <p>Framework diseñado para producción de alta velocidad. Excelente precisión en Reconocimiento de Entidades Nombradas (NER).</p>
+          <ul>
+            <li><strong>Uso:</strong> Extracción de nombres, fechas y montos en contratos de crédito.</li>
+            <li><strong>Fortaleza:</strong> Pipelines optimizados en C++ y modelos multilingües avanzados.</li>
+          </ul>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-badge hf">Hugging Face</div>
+          <h3>Transformers & Datasets</h3>
+          <p>Ecosistema estándar de la industria para despliegue de modelos pré-entrenados como BERT, RoBERTa y Llama.</p>
+          <ul>
+            <li><strong>Uso:</strong> Fine-tuning de FinBERT para análisis de sentimiento en reportes bursátiles.</li>
+            <li><strong>Fortaleza:</strong> Hub de modelos colaborativo y librerías de inferencia acelerada.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: APLICACIONES EN BANCA Y FINANZAS -->
+    <section class="module-section">
+      <div class="section-header">
+        <h2>3. Aplicaciones de Alto Impacto en Banca y Finanzas</h2>
+        <p>Explora cómo el NLP transforma la operación diaria, mitiga riesgos y optimiza la atención al cliente.</p>
+      </div>
+
+      <div class="tabs-grid">
+        <button class="tab-btn-app active" onclick="mostrarApp('pqrs', this)">
+          <span class="icon">📊</span> Análisis de PQRS
+        </button>
+        <button class="tab-btn-app" onclick="mostrarApp('chatbots', this)">
+          <span class="icon">🤖</span> Chatbots Conversacionales
+        </button>
+        <button class="tab-btn-app" onclick="mostrarApp('fraude', this)">
+          <span class="icon">🛡️</span> Detección de Fraude
+        </button>
+        <button class="tab-btn-app" onclick="mostrarApp('riesgo', this)">
+          <span class="icon">📈</span> Evaluación de Riesgo
+        </button>
+      </div>
+
+      <div id="content-display-2" class="content-display">
+        <!-- El contenido detallado se inyecta dinámicamente con JS -->
+      </div>
+    </section>
+
   </main>
 
   <footer>
-    <p>Infografía creada por Adriana Huertas – 2026</p>
+    <p><strong>Infografía Interactiva de Procesamiento del Lenguaje Natural</strong></p>
+    <p>Diseñada por Adriana Milena Huertas Martín | Maestría en Inteligencia Artificial © 2026</p>
   </footer>
 </body>
 </html>
